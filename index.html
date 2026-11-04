@@ -2,626 +2,258 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cricket Wallpapers | Premium Collection</title>
-
-<style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    background: #090909;
-    color: #fff;
-    font-family: Arial, sans-serif;
-}
-
-:root {
-    --gold: #d6ad55;
-    --gold2: #f5d98b;
-    --panel: #151515;
-}
-
-header {
-    padding: 22px 7%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid #302719;
-    position: sticky;
-    top: 0;
-    background: rgba(9,9,9,.96);
-    z-index: 10;
-}
-
-.logo {
-    color: var(--gold2);
-    font-size: 23px;
-    font-weight: 900;
-    letter-spacing: 1px;
-}
-
-.logo span {
-    color: white;
-}
-
-nav a {
-    color: #ddd;
-    text-decoration: none;
-    margin-left: 20px;
-    font-size: 14px;
-}
-
-nav a:hover {
-    color: var(--gold2);
-}
-
-.hero {
-    min-height: 390px;
-    padding: 90px 20px;
-    text-align: center;
-    background:
-    radial-gradient(ellipse at center, #3a2b12 0%, #15110a 38%, #090909 75%);
-}
-
-.tag {
-    color: var(--gold2);
-    letter-spacing: 4px;
-    font-size: 12px;
-    font-weight: bold;
-}
-
-.hero h1 {
-    font-size: clamp(35px, 6vw, 65px);
-    margin: 20px 0;
-    font-weight: 900;
-}
-
-.hero h1 span {
-    color: var(--gold);
-}
-
-.hero p {
-    color: #aaa;
-    font-size: 15px;
-    line-height: 1.7;
-}
-
-.search-wrap {
-    max-width: 650px;
-    margin: 30px auto 0;
-    display: flex;
-    background: #191919;
-    border: 1px solid #8b6c31;
-    border-radius: 12px;
-    overflow: hidden;
-}
-
-.search-wrap input {
-    width: 100%;
-    background: transparent;
-    border: none;
-    outline: none;
-    color: white;
-    padding: 17px;
-    font-size: 15px;
-}
-
-.search-wrap button {
-    background: var(--gold);
-    border: none;
-    padding: 0 23px;
-    cursor: pointer;
-    font-weight: bold;
-}
-
-section {
-    padding: 45px 7%;
-}
-
-.section-heading {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 15px;
-    margin-bottom: 25px;
-}
-
-.section-heading h2 {
-    font-size: 25px;
-}
-
-.section-heading h2 span {
-    color: var(--gold);
-}
-
-.section-heading p {
-    color: #888;
-    font-size: 13px;
-    margin-top: 6px;
-}
-
-.categories {
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-    margin-bottom: 30px;
-}
-
-.cat-btn {
-    border: 1px solid #444;
-    background: #171717;
-    color: #ddd;
-    padding: 10px 17px;
-    border-radius: 30px;
-    cursor: pointer;
-}
-
-.cat-btn.active,
-.cat-btn:hover {
-    background: var(--gold);
-    color: #090909;
-    border-color: var(--gold);
-}
-
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
-    gap: 22px;
-}
-
-.wallpaper {
-    background: var(--panel);
-    border: 1px solid #292929;
-    border-radius: 13px;
-    overflow: hidden;
-    transition: .3s;
-}
-
-.wallpaper:hover {
-    transform: translateY(-5px);
-    border-color: var(--gold);
-    box-shadow: 0 8px 30px #d6ad5520;
-}
-
-.wallpaper img {
-    width: 100%;
-    height: 270px;
-    object-fit: cover;
-    display: block;
-    cursor: pointer;
-}
-
-.wall-info {
-    padding: 15px;
-}
-
-.wall-info h3 {
-    color: var(--gold2);
-    font-size: 16px;
-}
-
-.wall-info p {
-    color: #999;
-    font-size: 12px;
-    margin: 7px 0 13px;
-}
-
-.actions {
-    display: flex;
-    gap: 8px;
-}
-
-.actions button {
-    flex: 1;
-    border: 1px solid var(--gold);
-    background: transparent;
-    color: var(--gold2);
-    padding: 9px 5px;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 11px;
-}
-
-.actions button:hover {
-    background: var(--gold);
-    color: #000;
-}
-
-.empty {
-    grid-column: 1/-1;
-    text-align: center;
-    padding: 55px 15px;
-    background: #141414;
-    border-radius: 12px;
-    color: #aaa;
-}
-
-.upload-section {
-    background: linear-gradient(135deg,#1b160c,#101010);
-    border: 1px solid #57421e;
-    border-radius: 18px;
-    padding: 35px;
-    max-width: 750px;
-    margin: 0 auto;
-}
-
-.upload-section h2 {
-    color: var(--gold2);
-    margin-bottom: 12px;
-}
-
-.upload-section p {
-    color: #aaa;
-    font-size: 13px;
-    line-height: 1.7;
-    margin-bottom: 20px;
-}
-
-.upload-section input,
-.upload-section select {
-    width: 100%;
-    padding: 13px;
-    margin: 8px 0;
-    background: #202020;
-    border: 1px solid #494949;
-    border-radius: 7px;
-    color: white;
-}
-
-.upload-btn {
-    width: 100%;
-    padding: 14px;
-    margin-top: 12px;
-    background: var(--gold);
-    color: #090909;
-    border: none;
-    border-radius: 7px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.note {
-    color: #d6ad55 !important;
-    font-size: 12px !important;
-    margin-top: 15px;
-}
-
-footer {
-    border-top: 1px solid #302719;
-    padding: 30px 15px;
-    text-align: center;
-    color: #888;
-    font-size: 13px;
-    line-height: 2;
-}
-
-footer span {
-    color: var(--gold);
-}
-
-.modal {
-    display: none;
-    position: fixed;
-    inset: 0;
-    z-index: 100;
-    background: rgba(0,0,0,.95);
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-}
-
-.modal.open {
-    display: flex;
-}
-
-.modal img {
-    max-width: 90%;
-    max-height: 85vh;
-    object-fit: contain;
-}
-
-.close {
-    position: absolute;
-    right: 25px;
-    top: 20px;
-    color: white;
-    font-size: 35px;
-    cursor: pointer;
-}
-
-@media(max-width:600px) {
-    header { padding: 18px 5%; }
-    .logo { font-size: 17px; }
-    nav a { margin-left: 9px; font-size: 12px; }
-    section { padding: 35px 5%; }
-    .gallery { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 12px; }
-    .wallpaper img { height: 220px; }
-    .wall-info { padding: 10px; }
-    .wall-info h3 { font-size: 13px; }
-    .upload-section { padding: 22px; }
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#090909">
+  <title>cricketwallpapers.com | Premium Cricket Wallpapers</title>
+  <meta name="description" content="Discover premium cricket wallpapers in HD and original quality.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<header>
-    <div class="logo">CRICKET <span>WALLPAPERS</span></div>
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#gallery">Gallery</a>
-        <a href="#upload">Upload</a>
-    </nav>
+<div class="topline"></div>
+
+<header class="site-header">
+  <a class="brand" href="#">
+    <span class="brand-mark">CW<span>•</span></span>
+    <span class="brand-name">CRICKET<span>WALLPAPERS</span><small>.COM</small></span>
+  </a>
+
+  <nav class="desktop-nav">
+    <a class="active" href="#home">Home</a>
+    <a href="#gallery">Wallpapers</a>
+    <a href="#categories">Categories</a>
+    <a href="#about">About</a>
+  </nav>
+
+  <button class="gold-button small" id="adminOpen">Admin Upload</button>
+  <button class="menu-toggle" id="menuToggle">☰</button>
 </header>
 
-<div class="hero" id="home">
-    <div class="tag">THE ULTIMATE CRICKET COLLECTION</div>
-    <h1>YOUR CRICKET.<br><span>YOUR WALLPAPER.</span></h1>
-    <p>Discover amazing cricket wallpapers of your favourite players.</p>
+<main>
 
-    <div class="search-wrap">
-        <input id="search" type="search"
-        placeholder="Search MS Dhoni, Virat Kohli, Rohit Sharma...">
-        <button onclick="renderGallery()">SEARCH</button>
-    </div>
-</div>
+<section class="hero" id="home">
+  <div class="hero-content">
+    <div class="eyebrow"><span></span> THE HOME OF CRICKET WALLPAPERS</div>
 
-<section id="gallery">
-    <div class="section-heading">
-        <div>
-            <h2>EXPLORE <span>WALLPAPERS</span></h2>
-            <p>Find your favourite cricket moments.</p>
-        </div>
-        <div id="count" style="color:#d6ad55">0 Wallpapers</div>
+    <h1>YOUR SCREEN.<br><em>YOUR CRICKET.</em></h1>
+
+    <p>
+      Premium cricket wallpapers for every fan.
+      Find your favourite players, choose your quality,
+      and make your screen legendary.
+    </p>
+
+    <div class="hero-actions">
+      <a class="gold-button" href="#gallery">Explore Wallpapers <b>↗</b></a>
+      <a class="text-link" href="#categories">Browse categories →</a>
     </div>
 
-    <div class="categories" id="categories">
-        <button class="cat-btn active" data-cat="All">All</button>
-        <button class="cat-btn" data-cat="MS Dhoni">MS Dhoni</button>
-        <button class="cat-btn" data-cat="Virat Kohli">Virat Kohli</button>
-        <button class="cat-btn" data-cat="Rohit Sharma">Rohit Sharma</button>
-        <button class="cat-btn" data-cat="Shubman Gill">Shubman Gill</button>
-        <button class="cat-btn" data-cat="Jasprit Bumrah">Jasprit Bumrah</button>
-        <button class="cat-btn" data-cat="IPL">IPL</button>
-        <button class="cat-btn" data-cat="Team India">Team India</button>
+    <div class="hero-stats">
+      <div><strong>HD</strong><span>QUALITY</span></div>
+      <i></i>
+      <div><strong>4K</strong><span>ORIGINAL*</span></div>
+      <i></i>
+      <div><strong>100%</strong><span>CRICKET</span></div>
     </div>
 
-    <div class="gallery" id="galleryGrid">
-        <div class="empty">
-            <h3>YOUR WALLPAPER COLLECTION STARTS HERE</h3>
-            <p>Add your wallpapers to the GitHub wallpapers folder.</p>
-        </div>
+    <small class="hero-note">
+      *Original quality is available when provided with the wallpaper.
+    </small>
+  </div>
+
+  <div class="hero-art">
+    <div class="stadium-glow"></div>
+    <div class="stadium-lines"></div>
+    <div class="hero-ball"></div>
+    <div class="hero-art-label">
+      <span>01 / THE GAME</span>
+      <b>MADE FOR FANS</b>
     </div>
+  </div>
 </section>
 
-<section id="upload">
-    <div class="upload-section">
-        <h2>UPLOAD A WALLPAPER</h2>
-        <p>Share a cricket wallpaper with this browser's gallery.</p>
+<section class="category-strip" id="categories">
+  <div class="section-kicker">EXPLORE YOUR PASSION</div>
 
-        <input type="text" id="playerName"
-        placeholder="Player name (e.g. MS Dhoni)">
-
-        <select id="uploadCategory">
-            <option value="MS Dhoni">MS Dhoni</option>
-            <option value="Virat Kohli">Virat Kohli</option>
-            <option value="Rohit Sharma">Rohit Sharma</option>
-            <option value="Shubman Gill">Shubman Gill</option>
-            <option value="Jasprit Bumrah">Jasprit Bumrah</option>
-            <option value="IPL">IPL</option>
-            <option value="Team India">Team India</option>
-        </select>
-
-        <input type="file" id="wallpaperFile" accept="image/*" multiple>
-
-        <button class="upload-btn" onclick="uploadWallpaper()">
-            + ADD WALLPAPER
-        </button>
-
-        <p class="note">
-            Note: Visitor uploads are temporary and visible only in their
-            current browser session. They are not sent to the public website.
-        </p>
-    </div>
+  <div class="category-list">
+    <button class="category-chip selected" data-category="All">All Wallpapers</button>
+    <button class="category-chip" data-category="Team India">Team India</button>
+    <button class="category-chip" data-category="Legends">Legends</button>
+    <button class="category-chip" data-category="IPL">IPL</button>
+    <button class="category-chip" data-category="Stadium">Stadium</button>
+  </div>
 </section>
 
-<div class="modal" id="preview">
-    <span class="close" onclick="closePreview()">&times;</span>
-    <img id="previewImg" src="" alt="Wallpaper preview">
-</div>
+<section class="gallery-section" id="gallery">
+
+  <div class="section-heading">
+    <div>
+      <div class="section-kicker">THE WALLPAPER COLLECTION</div>
+      <h2>FAN <em>FAVOURITES</em></h2>
+    </div>
+
+    <label class="search-box">
+      <span>⌕</span>
+      <input id="searchInput" type="search" placeholder="Search player or team...">
+    </label>
+  </div>
+
+  <div class="gallery-grid" id="wallpaperGrid">
+
+    <article class="wall-card sample" data-name="Virat Kohli King" data-category="Team India">
+      <div class="wall-image art-one">
+        <span class="art-number">18</span>
+        <span class="art-caption">THE KING</span>
+        <span class="art-player">VIRAT<br>KOHLI</span>
+      </div>
+      <div class="wall-meta">
+        <div><b>King Kohli</b><small>Team India · Sample artwork</small></div>
+        <span class="quality-tag">HD</span>
+      </div>
+      <button class="download-button" data-sample="Virat Kohli">
+        Preview sample <span>↗</span>
+      </button>
+    </article>
+
+    <article class="wall-card sample" data-name="MS Dhoni Captain Cool" data-category="Legends">
+      <div class="wall-image art-two">
+        <span class="art-number">07</span>
+        <span class="art-caption">CAPTAIN COOL</span>
+        <span class="art-player">MS<br>DHONI</span>
+      </div>
+      <div class="wall-meta">
+        <div><b>Captain Cool</b><small>Legends · Sample artwork</small></div>
+        <span class="quality-tag">HD</span>
+      </div>
+      <button class="download-button" data-sample="MS Dhoni">
+        Preview sample <span>↗</span>
+      </button>
+    </article>
+
+    <article class="wall-card sample" data-name="Rohit Sharma Hitman" data-category="Team India">
+      <div class="wall-image art-three">
+        <span class="art-number">45</span>
+        <span class="art-caption">THE HITMAN</span>
+        <span class="art-player">ROHIT<br>SHARMA</span>
+      </div>
+      <div class="wall-meta">
+        <div><b>The Hitman</b><small>Team India · Sample artwork</small></div>
+        <span class="quality-tag">HD</span>
+      </div>
+      <button class="download-button" data-sample="Rohit Sharma">
+        Preview sample <span>↗</span>
+      </button>
+    </article>
+
+  </div>
+
+  <p class="empty-state" id="emptyState" hidden>
+    No wallpapers found. Try another search.
+  </p>
+
+  <p class="sample-note">
+    These are sample graphic previews. Replace them with licensed
+    or personally created player wallpapers before publishing downloads.
+  </p>
+
+</section>
+
+<section class="upload-banner">
+  <div>
+    <div class="section-kicker">GROW THE COLLECTION</div>
+    <h2>GREAT CRICKET.<br><em>GREAT WALLPAPERS.</em></h2>
+    <p>New designs, iconic moments, and the players you love.</p>
+  </div>
+
+  <button class="outline-button" id="bannerAdmin">
+    Open admin panel <span>↗</span>
+  </button>
+</section>
+
+<section class="about-section" id="about">
+  <div class="section-kicker">ABOUT THE WEBSITE</div>
+  <h2>BUILT FOR THE <em>LOVE OF CRICKET.</em></h2>
+  <p>
+    cricketwallpapers.com is a fan-focused space for
+    cricket-inspired screen backgrounds. Explore the collection
+    and find a design that belongs on your screen.
+  </p>
+</section>
+
+</main>
 
 <footer>
-    <h3>CRICKET <span>WALLPAPERS</span></h3>
-    Your Ultimate Cricket Wallpaper Destination.
-    <br>Made for Cricket Fans.
+  <a class="brand footer-brand" href="#">
+    <span class="brand-mark">CW<span>•</span></span>
+    <span class="brand-name">CRICKET<span>WALLPAPERS</span><small>.COM</small></span>
+  </a>
+
+  <div class="footer-center">
+    © <span id="year"></span> cricketwallpapers.com · All rights reserved.
+  </div>
+
+  <div class="made-by">
+    MADE BY <strong>ARPIT MUNJAL</strong>
+  </div>
 </footer>
 
-<script>
+<div class="modal-backdrop" id="adminModal" hidden>
+  <section class="admin-modal" role="dialog" aria-modal="true">
+    <button class="modal-close" id="adminClose">×</button>
 
-// ADD YOUR GITHUB WALLPAPERS HERE
-// Upload images to the "wallpapers" folder first.
+    <div class="section-kicker">SITE MANAGEMENT</div>
+    <h2>ADMIN <em>UPLOAD</em></h2>
 
-const wallpapers = [
-    // Example:
-    // {
-    //   name: "MS Dhoni",
-    //   category: "MS Dhoni",
-    //   file: "wallpapers/dhoni-1.jpg"
-    // },
-    // {
-    //   name: "Virat Kohli",
-    //   category: "Virat Kohli",
-    //   file: "wallpapers/kohli-1.jpg"
-    // }
-];
+    <p class="admin-warning">
+      Demo upload preview only. Files selected here stay in this
+      browser and are not published for other visitors.
+    </p>
 
-let temporaryWallpapers = [];
-let selectedCategory = "All";
+    <form id="uploadForm">
+      <label>
+        Wallpaper title
+        <input id="wallTitle" required placeholder="e.g. Team India Glory">
+      </label>
 
-const grid = document.getElementById("galleryGrid");
+      <label>
+        Player / category
+        <input id="wallCategory" required placeholder="e.g. Team India">
+      </label>
 
-function allWallpapers() {
-    return [...wallpapers, ...temporaryWallpapers];
-}
+      <label>
+        HD image
+        <input id="hdFile" type="file" accept="image/*" required>
+      </label>
 
-function renderGallery() {
-    const query = document.getElementById("search")
-        .value.trim().toLowerCase();
+      <label>
+        Original quality image (optional)
+        <input id="originalFile" type="file" accept="image/*">
+      </label>
 
-    const filtered = allWallpapers().filter(item => {
-        const matchesSearch =
-            item.name.toLowerCase().includes(query) ||
-            item.category.toLowerCase().includes(query);
+      <button class="gold-button full" type="submit">
+        Add preview to this browser
+      </button>
+    </form>
 
-        const matchesCategory =
-            selectedCategory === "All" ||
-            item.category === selectedCategory;
+    <div class="admin-footnote">
+      No delete control is provided. For permanent public uploads,
+      connect a secure storage/backend service and admin authentication.
+    </div>
 
-        return matchesSearch && matchesCategory;
-    });
+    <p class="upload-status" id="uploadStatus"></p>
+  </section>
+</div>
 
-    document.getElementById("count").textContent =
-        filtered.length + " Wallpapers";
+<div class="preview-modal" id="previewModal" hidden>
+  <button class="preview-close" id="previewClose">Close ×</button>
+  <div class="preview-content" id="previewContent"></div>
+</div>
 
-    if (!filtered.length) {
-        grid.innerHTML = `
-            <div class="empty">
-                <h3>NO WALLPAPERS FOUND</h3>
-                <p>Try another player name or category.</p>
-            </div>`;
-        return;
-    }
-
-    grid.innerHTML = "";
-
-    filtered.forEach(item => {
-        const card = document.createElement("div");
-        card.className = "wallpaper";
-
-        const img = document.createElement("img");
-        img.src = item.file;
-        img.alt = item.name;
-        img.loading = "lazy";
-        img.onclick = () => openPreview(item.file);
-
-        const info = document.createElement("div");
-        info.className = "wall-info";
-
-        const title = document.createElement("h3");
-        title.textContent = item.name;
-
-        const category = document.createElement("p");
-        category.textContent = item.category;
-
-        const actions = document.createElement("div");
-        actions.className = "actions";
-
-        const hd = document.createElement("button");
-        hd.textContent = "HD DOWNLOAD";
-        hd.onclick = () => downloadImage(item, "hd");
-
-        const original = document.createElement("button");
-        original.textContent = "ORIGINAL";
-        original.onclick = () => downloadImage(item, "original");
-
-        actions.append(hd, original);
-        info.append(title, category, actions);
-        card.append(img, info);
-        grid.appendChild(card);
-    });
-}
-
-function downloadImage(item, quality) {
-    const link = document.createElement("a");
-    link.href = item.file;
-    link.download = item.name.replace(/\s+/g, "-") +
-        (quality === "hd" ? "-HD" : "-Original") + ".jpg";
-    document.body.appendChild(link);
-    link.click();
-    link.remove();
-}
-
-function openPreview(src) {
-    document.getElementById("previewImg").src = src;
-    document.getElementById("preview").classList.add("open");
-}
-
-function closePreview() {
-    document.getElementById("preview").classList.remove("open");
-}
-
-document.getElementById("preview").onclick = function(e) {
-    if (e.target === this) closePreview();
-};
-
-document.getElementById("search").addEventListener("input", renderGallery);
-
-document.querySelectorAll(".cat-btn").forEach(button => {
-    button.addEventListener("click", () => {
-        document.querySelectorAll(".cat-btn").forEach(b =>
-            b.classList.remove("active"));
-
-        button.classList.add("active");
-        selectedCategory = button.dataset.cat;
-        renderGallery();
-    });
-});
-
-// Visitor uploads are temporary browser previews.
-// There is deliberately no public delete function.
-
-function uploadWallpaper() {
-    const name = document.getElementById("playerName").value.trim();
-    const category = document.getElementById("uploadCategory").value;
-    const files = document.getElementById("wallpaperFile").files;
-
-    if (!name) {
-        alert("Please enter the player name.");
-        return;
-    }
-
-    if (!files.length) {
-        alert("Please select at least one wallpaper.");
-        return;
-    }
-
-    const validFiles = Array.from(files).filter(file =>
-        file.type.startsWith("image/"));
-
-    if (!validFiles.length) {
-        alert("Please select valid image files.");
-        return;
-    }
-
-    validFiles.forEach(file => {
-        const reader = new FileReader();
-
-        reader.onload = event => {
-            temporaryWallpapers.push({
-                name: name,
-                category: category,
-                file: event.target.result
-            });
-
-            renderGallery();
-        };
-
-        reader.readAsDataURL(file);
-    });
-
-    alert("Wallpaper added to this browser's temporary gallery!");
-    document.getElementById("playerName").value = "";
-    document.getElementById("wallpaperFile").value = "";
-}
-
-renderGallery();
-
-</script>
+<script src="script.js"></script>
 
 </body>
 </html>
